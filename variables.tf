@@ -89,3 +89,7 @@ variable "source_network" {
   description = "Allow access from this network prefix. Defaults to '*'."
   default     = "*"
 }
+
+variable "bastion_allocation_method" {
+  type = string
+}

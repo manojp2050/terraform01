@@ -56,7 +56,7 @@ resource "azurerm_subnet" "subnet" {
   name                 = "${var.prefix}subnet"
   virtual_network_name = "${azurerm_virtual_network.vnet.name}"
   resource_group_name  = "${azurerm_resource_group.tf_azure_guide.name}"
-  address_prefix       = "${var.subnet_prefix}"
+  address_prefixes       = "${var.subnet_prefix}"
 }
 
 ##############################################################################
@@ -122,7 +122,7 @@ resource "azurerm_public_ip" "tf-guide-pip" {
   name                         = "${var.prefix}-ip"
   location                     = "${var.location}"
   resource_group_name          = "${azurerm_resource_group.tf_azure_guide.name}"
-  public_ip_address_allocation = "Dynamic"
+  allocation_method            = var.bastion_allocation_method
   domain_name_label            = "${var.hostname}"
 }
 
