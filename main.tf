@@ -12,7 +12,7 @@
 # The latest version of the Azure provider breaks backward compatibility.
 # TODO: Update this code to use the latest provider.
 provider "azurerm" {
-  version = "=3.0.0"
+  version = "=2.37.0"
 }
 
 # First we'll create a resource group. In Azure every resource belongs to a 
