@@ -9,10 +9,20 @@
 ##############################################################################
 # * Shared infrastructure resources
 
-# The latest version of the Azure provider breaks backward compatibility.
-# TODO: Update this code to use the latest provider.
+# We strongly recommend using the required_providers block to set the
+# Azure Provider source and version being used
+terraform {
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "=3.0.0"
+    }
+  }
+}
+
+# Configure the Microsoft Azure Provider
 provider "azurerm" {
-  version = "=2.37.0"
+  features {}
 }
 
 # First we'll create a resource group. In Azure every resource belongs to a 
